@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/SupportScenes/Gun.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/MainScenes/PlayerStats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SupportScenes/Room.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/MainScenes/Map.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/SupportScenes/Player.tscn" type="PackedScene" id=6]
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Room" parent="." instance=ExtResource( 4 )]
+
+[node name="OtherPlayers" type="Node" parent="Room"]
+
+[node name="Player" parent="Room" instance=ExtResource( 6 )]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="PlayerStats" parent="GUI" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Gun" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[editable path="Room"]

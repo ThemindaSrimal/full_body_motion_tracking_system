@@ -1,0 +1,1 @@
+Make sure to put DTLS cetificate renaming  *x509_Certificate.crt* inside Resources/Ceritificate Folder before export

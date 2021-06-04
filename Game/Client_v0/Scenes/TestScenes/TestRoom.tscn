@@ -1,0 +1,211 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/TestScenes/TestRoom.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/SupportScenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Textures/floor.tres" type="Material" id=3]
+[ext_resource path="res://assets/Dark/texture_03.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/SupportScenes/PlayerTemplate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/SupportScenes/Room.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/ModelScenes/corridor.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0627451, 0.827451, 0.290196, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.498039, 0.882353, 0.819608, 1 )
+albedo_texture = ExtResource( 4 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 2, 10, 20 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 5, 10 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Reload"
+length = 2.65
+tracks/0/type = "transform"
+tracks/0/path = NodePath("pistol_tauros")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray(  )
+tracks/1/type = "value"
+tracks/1/path = NodePath("pistol_tauros:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.79397e-09, -0.0184689, -0.00919497 ), Vector3( 3.72529e-09, -0.0260283, -0.0125626 ), Vector3( 5.58794e-09, -0.0354958, -0.0171402 ), Vector3( 2.79397e-09, -0.0184689, -0.00919497 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pistol_tauros:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -90, 0 ), Vector3( 2.1e-06, -90, -13.001 ), Vector3( 5.66729e-06, -90, -37.1291 ), Vector3( 0, -90, 0 ) ]
+}
+tracks/3/type = "transform"
+tracks/3/path = NodePath("pistol_tauros/Círculo_017")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray(  )
+tracks/4/type = "value"
+tracks/4/path = NodePath("pistol_tauros/Círculo_017:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2.4, 2.5, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 8.94184, 16.5373, 7.15256e-07 ), Vector3( 8.10742, 16.4922, 0 ), Vector3( 8.94184, 16.5373, 7.15256e-07 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.6
+tracks/0/type = "transform"
+tracks/0/path = NodePath("pistol_tauros/Círculo_017")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray(  )
+tracks/1/type = "value"
+tracks/1/path = NodePath("pistol_tauros/Círculo_017:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 9.31017, 16.5373, 0 ), Vector3( 7.71582, 16.5373, 0 ), Vector3( 8.94184, 16.5373, 7.15256e-07 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pistol_tauros:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.79397e-09, -0.0184689, -0.00919497 ), Vector3( 3.72529e-09, -0.0184689, -0.0146989 ), Vector3( 2.79397e-09, -0.0184689, -0.00919497 ) ]
+}
+
+[node name="TestRoom" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+invert_faces = true
+width = 50.0
+depth = 50.0
+material = ExtResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 0.999973, 0, 0.00736522, 0, 1, 0, -0.00736522, 0, 0.999973, 15.3751, 1.54391, 18.7071 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 0.999973, 0, 0.00736522, 0, 1, 0, -0.00736522, 0, 0.999973, 15.3751, 1.54391, -12.8689 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 0.999973, 0, 0.00736522, 0, 1, 0, -0.00736522, 0, 0.999973, -14.5213, 1.54391, -12.8689 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( -7.70807e-07, 0, -4.2859, 0, 0.76919, 0, 4.73118, 0, -6.98261e-07, -16.1211, 0.86155, 3.02932 )
+polygon = PoolVector2Array( 0, 0, -0.00256896, 0.116138, 1.01223, 2.51664, 1.01488, -0.00600183 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9977, 2.52804, 13.3929 )
+width = 4.08852
+height = 0.538716
+depth = 11.1659
+
+[node name="Wall" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 3.449, 7.73602 )
+width = 1.0
+height = 10.0
+depth = 10.0
+material = SubResource( 2 )
+
+[node name="Wall2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76069, 3.449, 3.20053 )
+width = 1.0
+height = 10.0
+depth = 10.0
+material = SubResource( 2 )
+
+[node name="Wall3" type="StaticBody" parent="CSGCombiner" groups=[
+"Walls",
+]]
+transform = Transform( 0.0305035, 0, -0.999535, 0, 1, 0, 0.999535, 0, 0.0305035, 0, 4.58745, -19.0123 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CSGCombiner/Wall3"]
+transform = Transform( 1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0.448334, 0, -14.691 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Wall3"]
+shape = SubResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15662, 0 )
+
+[node name="AnimationPlayer" parent="Player/Head/Hand/Weapon" index="0"]
+anims/Reload = SubResource( 5 )
+anims/Shoot = SubResource( 6 )
+
+[node name="Círculo_017" parent="Player/Head/Hand/Weapon/pistol_tauros" index="4"]
+transform = Transform( 0.104586, 8.88178e-15, 2.32831e-09, 2.32831e-09, -4.57159e-09, -0.104586, -1.77636e-15, 0.104586, -4.57159e-09, 8.94184, 16.5373, 7.15256e-07 )
+
+[node name="PlayerTemplate" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99059, -5.80391 )
+
+[node name="Room" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4034, 0 )
+
+[node name="Corridors" type="Spatial" parent="."]
+
+[node name="corridor" parent="Corridors" instance=ExtResource( 7 )]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 16.4216, -0.794636, 0 )
+
+[node name="corridor2" parent="Corridors" instance=ExtResource( 7 )]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 16.4216, -0.794636, 8.0013 )
+
+[editable path="Player"]
+
+[editable path="Player/Head/Hand/Weapon"]
+
+[editable path="Player/Head/Hand/Weapon/pistol_tauros"]

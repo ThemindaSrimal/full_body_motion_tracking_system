@@ -1,0 +1,143 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/ModelScenes/RoomEnv.tres" type="Environment" id=1]
+[ext_resource path="res://Resources/Textures/floor.tres" type="Material" id=2]
+[ext_resource path="res://Resources/ModelScenes/corridor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/ModelScenes/corridor_window.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/ModelScenes/corridor_cornerRound.tscn" type="PackedScene" id=5]
+
+[node name="Room" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76762, 0 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2849 )
+use_collision = true
+
+[node name="container1" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.06767, -27.846 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+material = ExtResource( 2 )
+
+[node name="crosscontainer1" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.54687, -21.9057 )
+invert_faces = true
+width = 5.0
+height = 10.0
+material = ExtResource( 2 )
+
+[node name="container2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0.0449944, 6.06767, 46.55 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+material = ExtResource( 2 )
+
+[node name="crosscontainer2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -0.044995, 3.54687, 40.6104 )
+invert_faces = true
+width = 5.0
+height = 10.0
+material = ExtResource( 2 )
+
+[node name="container3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4856, 6.06767, 9.6213 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+material = ExtResource( 2 )
+
+[node name="crosscontainer3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 29.5496, 3.54687, 9.84881 )
+invert_faces = true
+width = 5.0
+height = 10.0
+material = ExtResource( 2 )
+
+[node name="container4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -36.7246, 6.06767, 9.61203 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+material = ExtResource( 2 )
+
+[node name="crosscontainer4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -30.7894, 3.54687, 9.85808 )
+invert_faces = true
+width = 5.0
+height = 10.0
+material = ExtResource( 2 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 18.566, 0 )
+invert_faces = true
+polygon = PoolVector2Array( -20, 21, 20, 21, 28.88, 0.0792598, 29, -20, 20, -40, -20, -40, -30, -20, -30.1558, 0.107379 )
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="spawncontainer" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.22338, -33.648 )
+invert_faces = true
+height = 10.0
+sides = 16
+
+[node name="spawncontainer2" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.22338, 52.2483 )
+invert_faces = true
+height = 10.0
+sides = 16
+
+[node name="DirectionalLight" type="DirectionalLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.037, 10.1029 )
+light_color = Color( 0.529412, 0.133333, 0.709804, 1 )
+
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="Portal1" type="Position3D" parent="SpawnPositions"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 4.22567, -43.9804 )
+
+[node name="Portal2" type="Position3D" parent="SpawnPositions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.22567, 41.9778 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
+
+[node name="Corridors" type="Spatial" parent="."]
+
+[node name="corridor" parent="Corridors" instance=ExtResource( 3 )]
+transform = Transform( -0.0187801, 0, -3.99996, 0, 5, 0, 3.99996, 0, -0.0187801, -3.59626, -1.45912, -14.2842 )
+
+[node name="corridor2" parent="Corridors" instance=ExtResource( 3 )]
+transform = Transform( -0.0187801, 0, -3.99996, 0, 5, 0, 3.99996, 0, -0.0187801, -7.62902, -1.45912, -14.3032 )
+
+[node name="corridor_window" parent="Corridors" instance=ExtResource( 4 )]
+transform = Transform( -0.106174, 0, -3.99859, 0, 5, 0, 3.99859, 0, -0.106174, 0.211403, -1.45716, -14.3637 )
+
+[node name="corridor_cornerRound" parent="Corridors" instance=ExtResource( 5 )]
+transform = Transform( -0.11399, 0, -3.99838, 0, 5, 0, 3.99838, 0, -0.11399, 4.20747, -1.44941, -14.2905 )
+
+[node name="corridor_cornerRound2" parent="Corridors" instance=ExtResource( 5 )]
+transform = Transform( 0.016826, 0, 3.99996, 0, 5, 0, -3.99996, 0, 0.016826, 0.527727, -1.45705, -30.2911 )
+
+[node name="Corridors2" type="Spatial" parent="."]
+transform = Transform( -0.999902, 0, -0.014032, 0, 1, 0, 0.014032, 0, -0.999902, 1.84399, 0, -0.244217 )
+
+[node name="corridor" parent="Corridors2" instance=ExtResource( 3 )]
+transform = Transform( -0.0187801, 0, -3.99996, 0, 5, 0, 3.99996, 0, -0.0187801, -3.59626, -1.45912, -14.2842 )
+
+[node name="corridor2" parent="Corridors2" instance=ExtResource( 3 )]
+transform = Transform( -0.0187801, 0, -3.99996, 0, 5, 0, 3.99996, 0, -0.0187801, -7.62902, -1.45912, -14.3032 )
+
+[node name="corridor_window" parent="Corridors2" instance=ExtResource( 4 )]
+transform = Transform( -0.106174, 0, -3.99859, 0, 5, 0, 3.99859, 0, -0.106174, 0.211403, -1.45716, -14.3637 )
+
+[node name="corridor_cornerRound" parent="Corridors2" instance=ExtResource( 5 )]
+transform = Transform( -0.11399, 0, -3.99838, 0, 5, 0, 3.99838, 0, -0.11399, 4.20747, -1.44941, -14.2905 )
+
+[node name="corridor_cornerRound2" parent="Corridors2" instance=ExtResource( 5 )]
+transform = Transform( 0.016826, 0, 3.99996, 0, 5, 0, -3.99996, 0, 0.016826, 0.527727, -1.45705, -30.2911 )

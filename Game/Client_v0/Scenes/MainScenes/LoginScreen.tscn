@@ -1,0 +1,399 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/UIElements/grey_button00.png" type="Texture" id=1]
+[ext_resource path="res://assets/Fonts/PirataOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/UIElements/green_button00.png" type="Texture" id=3]
+[ext_resource path="res://assets/UIElements/deck_2_large.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Fonts/Pirata30_1.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scenes/MainScenes/LoginScreen.gd" type="Script" id=6]
+[ext_resource path="res://assets/UIElements/blue_button00.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_size = 2
+outline_color = Color( 0.454902, 0.454902, 0.454902, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="LoginScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -262.5
+margin_right = 200.0
+margin_bottom = 262.5
+rect_min_size = Vector2( 400, 525 )
+texture = ExtResource( 4 )
+patch_margin_top = 28
+patch_margin_bottom = 28
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 60.0
+margin_right = -35.0
+margin_bottom = -45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background/VBoxContainer"]
+margin_right = 330.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "Login Screen"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/VBoxContainer"]
+margin_top = 57.0
+margin_right = 330.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 45 )
+
+[node name="UsernameTitle" type="Label" parent="Background/VBoxContainer"]
+margin_top = 106.0
+margin_right = 330.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Username"
+
+[node name="Username" type="LineEdit" parent="Background/VBoxContainer"]
+margin_top = 150.0
+margin_right = 330.0
+margin_bottom = 174.0
+
+[node name="PasswordTitle" type="Label" parent="Background/VBoxContainer"]
+margin_top = 178.0
+margin_right = 330.0
+margin_bottom = 218.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Password"
+
+[node name="Password" type="LineEdit" parent="Background/VBoxContainer"]
+margin_top = 222.0
+margin_right = 330.0
+margin_bottom = 246.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/VBoxContainer"]
+margin_top = 250.0
+margin_right = 330.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="LoginButton" type="TextureButton" parent="Background/VBoxContainer"]
+margin_top = 294.0
+margin_right = 330.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 220, 52 )
+size_flags_horizontal = 5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/LoginButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Login"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateAccountButton" type="TextureButton" parent="Background/VBoxContainer"]
+margin_top = 350.0
+margin_right = 330.0
+margin_bottom = 402.0
+rect_min_size = Vector2( 220, 52 )
+size_flags_horizontal = 5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/CreateAccountButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Create Account"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 60.0
+margin_right = -35.0
+margin_bottom = -45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background/VBoxContainer2"]
+margin_right = 330.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "Create New Account"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/VBoxContainer2"]
+margin_top = 57.0
+margin_right = 330.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="UsernameTitle" type="Label" parent="Background/VBoxContainer2"]
+margin_top = 76.0
+margin_right = 330.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Username"
+
+[node name="Username" type="LineEdit" parent="Background/VBoxContainer2"]
+margin_top = 120.0
+margin_right = 330.0
+margin_bottom = 144.0
+
+[node name="PasswordTitle" type="Label" parent="Background/VBoxContainer2"]
+margin_top = 148.0
+margin_right = 330.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Password"
+
+[node name="Password" type="LineEdit" parent="Background/VBoxContainer2"]
+margin_top = 192.0
+margin_right = 330.0
+margin_bottom = 216.0
+
+[node name="RepeatPasswordTitle" type="Label" parent="Background/VBoxContainer2"]
+margin_top = 220.0
+margin_right = 330.0
+margin_bottom = 260.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Repeat Password"
+
+[node name="RepeatPassword" type="LineEdit" parent="Background/VBoxContainer2"]
+margin_top = 264.0
+margin_right = 330.0
+margin_bottom = 288.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/VBoxContainer2"]
+margin_top = 292.0
+margin_right = 330.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="ConfirmButton" type="TextureButton" parent="Background/VBoxContainer2"]
+margin_top = 316.0
+margin_right = 330.0
+margin_bottom = 368.0
+rect_min_size = Vector2( 220, 52 )
+size_flags_horizontal = 5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/VBoxContainer2/ConfirmButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Confirm"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="Background/VBoxContainer2"]
+margin_top = 372.0
+margin_right = 330.0
+margin_bottom = 424.0
+rect_min_size = Vector2( 220, 52 )
+size_flags_horizontal = 5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/VBoxContainer2/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 60.0
+margin_right = -35.0
+margin_bottom = -45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background/VBoxContainer3"]
+margin_right = 330.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/VBoxContainer3"]
+margin_top = 57.0
+margin_right = 330.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="GatewayIpTitle" type="Label" parent="Background/VBoxContainer3"]
+margin_top = 76.0
+margin_right = 330.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Gateway Ip:"
+
+[node name="GatewayIp" type="LineEdit" parent="Background/VBoxContainer3"]
+margin_top = 120.0
+margin_right = 330.0
+margin_bottom = 144.0
+
+[node name="GatewayPortTitle" type="Label" parent="Background/VBoxContainer3"]
+margin_top = 148.0
+margin_right = 330.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Gateway Port :"
+
+[node name="GatewayPort" type="LineEdit" parent="Background/VBoxContainer3"]
+margin_top = 192.0
+margin_right = 330.0
+margin_bottom = 216.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/VBoxContainer3"]
+margin_top = 220.0
+margin_right = 330.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="SaveButton" type="TextureButton" parent="Background/VBoxContainer3"]
+margin_top = 244.0
+margin_right = 330.0
+margin_bottom = 296.0
+rect_min_size = Vector2( 220, 52 )
+size_flags_horizontal = 5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/VBoxContainer3/SaveButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Save"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="Background/VBoxContainer3"]
+margin_top = 300.0
+margin_right = 330.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 220, 52 )
+size_flags_horizontal = 5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/VBoxContainer3/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="TextureButton" parent="Background"]
+anchor_left = 1.0
+anchor_top = -0.033
+anchor_right = 1.0
+margin_left = 121.131
+margin_top = -16.0104
+margin_right = 311.131
+margin_bottom = 15.6646
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/SettingsButton"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -137.5
+margin_top = 4.5
+margin_right = -52.5
+margin_bottom = 44.5
+custom_fonts/font = ExtResource( 5 )
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Background/VBoxContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/CreateAccountButton" to="." method="_on_CreateAccountButton_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer2/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer2/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer3/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer3/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Background/SettingsButton" to="." method="_on_SettingsButton_pressed"]

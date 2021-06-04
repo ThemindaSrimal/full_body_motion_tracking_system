@@ -1,0 +1,241 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/default_theme.theme" type="Theme" id=1]
+[ext_resource path="res://Scenes/InterfaceScenes/SettingsScreen.gd" type="Script" id=2]
+[ext_resource path="res://Resources/pressed_button.stylebox" type="StyleBox" id=3]
+
+[node name="SettingsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0117647, 0.160784, 0.262745, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -268.5
+margin_right = 512.0
+margin_bottom = 268.5
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="BackOverlay/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 600, 400 )
+theme = ExtResource( 1 )
+custom_styles/tab_fg = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Server" type="ColorRect" parent="BackOverlay/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 600, 400 )
+color = Color( 0.054902, 0.0156863, 0.121569, 0.988235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackOverlay/VBoxContainer/TabContainer/Server"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 400 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ip" type="HBoxContainer" parent="BackOverlay/VBoxContainer/TabContainer/Server/VBoxContainer"]
+margin_top = 148.0
+margin_right = 500.0
+margin_bottom = 198.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="BackOverlay/VBoxContainer/TabContainer/Server/VBoxContainer/Ip"]
+margin_right = 173.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 173, 50 )
+text = "Server IP"
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="BackOverlay/VBoxContainer/TabContainer/Server/VBoxContainer/Ip"]
+margin_left = 178.0
+margin_right = 500.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Port" type="HBoxContainer" parent="BackOverlay/VBoxContainer/TabContainer/Server/VBoxContainer"]
+margin_top = 202.0
+margin_right = 500.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="BackOverlay/VBoxContainer/TabContainer/Server/VBoxContainer/Port"]
+margin_right = 173.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 173, 50 )
+text = "Server Port"
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="BackOverlay/VBoxContainer/TabContainer/Server/VBoxContainer/Port"]
+margin_left = 177.0
+margin_right = 500.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Gateway" type="ColorRect" parent="BackOverlay/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 600, 400 )
+color = Color( 0.054902, 0.0156863, 0.121569, 0.988235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BackOverlay/VBoxContainer/TabContainer/Gateway"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 400 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ip" type="HBoxContainer" parent="BackOverlay/VBoxContainer/TabContainer/Gateway/VBoxContainer2"]
+margin_top = 148.0
+margin_right = 500.0
+margin_bottom = 198.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="BackOverlay/VBoxContainer/TabContainer/Gateway/VBoxContainer2/Ip"]
+margin_top = -1.0
+margin_right = 190.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 190, 50 )
+text = "gateway IP"
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="BackOverlay/VBoxContainer/TabContainer/Gateway/VBoxContainer2/Ip"]
+margin_left = 195.0
+margin_right = 500.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Port" type="HBoxContainer" parent="BackOverlay/VBoxContainer/TabContainer/Gateway/VBoxContainer2"]
+margin_top = 202.0
+margin_right = 500.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="BackOverlay/VBoxContainer/TabContainer/Gateway/VBoxContainer2/Port"]
+margin_top = -1.0
+margin_right = 190.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 190, 50 )
+text = "gateway Port"
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="BackOverlay/VBoxContainer/TabContainer/Gateway/VBoxContainer2/Port"]
+margin_left = 194.0
+margin_right = 500.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Controller" type="ColorRect" parent="BackOverlay/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 600, 400 )
+color = Color( 0.054902, 0.0156863, 0.121569, 0.988235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackOverlay"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -84.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="BackOverlay/HBoxContainer"]
+margin_left = 425.0
+margin_right = 510.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 85, 40 )
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="BackOverlay/HBoxContainer"]
+margin_left = 514.0
+margin_right = 599.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 85, 40 )
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BackOverlay/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="BackOverlay/HBoxContainer/Save" to="." method="_on_Save_pressed"]
