@@ -1,7 +1,6 @@
 # Project Name : Full body motion tracking system
 
-In this project we are developing a multiplayer first-person shooter game based on body motion of the players.
-### [Click here](https://cepdnaclk.github.io/e16-3yp-full-body-motion-tracking-system/) to visit our website.
+This project is a multiplayer first-person shooter game based on body motion of the players.
 
 ![pic](https://user-images.githubusercontent.com/67902627/110009969-c23d2500-7d43-11eb-976d-5c219a31bd9f.jpg)
 
