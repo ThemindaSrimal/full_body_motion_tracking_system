@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Main/ServerRoom.gd" type="Script" id=1]
+
+[node name="Room" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76762, 0 )
+script = ExtResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2849 )
+use_collision = true
+
+[node name="container1" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.06767, -27.846 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+
+[node name="crosscontainer1" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.54687, -21.9057 )
+invert_faces = true
+width = 5.0
+height = 10.0
+
+[node name="container2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0.0449944, 6.06767, 46.55 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+
+[node name="crosscontainer2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -0.044995, 3.54687, 40.6104 )
+invert_faces = true
+width = 5.0
+height = 10.0
+
+[node name="container3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4856, 6.06767, 9.6213 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+
+[node name="crosscontainer3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 29.5496, 3.54687, 9.84881 )
+invert_faces = true
+width = 5.0
+height = 10.0
+
+[node name="container4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -36.7246, 6.06767, 9.61203 )
+invert_faces = true
+width = 10.0
+height = 15.0
+depth = 10.0
+
+[node name="crosscontainer4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -30.7894, 3.54687, 9.85808 )
+invert_faces = true
+width = 5.0
+height = 10.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 18.566, 0 )
+invert_faces = true
+polygon = PoolVector2Array( -20, 21, 20, 21, 28.88, 0.0792598, 29, -20, 20, -40, -20, -40, -30, -20, -30.1558, 0.107379 )
+depth = 20.0
+
+[node name="spawncontainer" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.22338, -33.648 )
+invert_faces = true
+height = 10.0
+sides = 16
+
+[node name="spawncontainer2" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.22338, 52.2483 )
+invert_faces = true
+height = 10.0
+sides = 16
+
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="Portal1" type="Position3D" parent="SpawnPositions"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 4.22567, -43.9804 )
+
+[node name="Portal2" type="Position3D" parent="SpawnPositions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.22567, 41.9778 )

@@ -1,0 +1,1 @@
+Make sure to put DTLS cetificate and key renaming  *x509_Certificate.crt* and *x509_Key.key* inside Ceritificate Folder before export
