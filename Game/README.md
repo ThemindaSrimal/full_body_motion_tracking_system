@@ -7,4 +7,3 @@
 ## About Test plugin
 - GuT plugin is used
 - To run tests ,need to install plugin
-* Errors generated while running test cases
