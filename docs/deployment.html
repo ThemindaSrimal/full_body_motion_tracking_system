@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="homepage">
+    <meta name="author" content="E/16/394">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Full Body Motion Tracking System</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="./src/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="./index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="./design.html">Design<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link active" href="./deployment.html">Deployment</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="./testing.html">Testing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="./budget.html">Budget</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./team.html">Team</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row row-header align-items-center">
+                <div class="col-12 col-sm-8">
+                    <h1 class="display-4">Game Console</h1>
+                    <p class="lead">
+                        The game console is a collection of sensors and wireless modules that can track the motion of arms, legs, and body.
+                        The collected data use as input for a multiplayer first-person shooter game.
+                        The smartphone is used to display the graphics and play the sound of the game.
+                    </p>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <img src="./src/img/fullset2.png" class="img-fluid" alt="fullset">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!--aws arch info-->
+    <div class="second-color">
+        <div class='container-fluid'>
+            <div class="row row-content align-items-center ">
+                <div class="col-12 col-sm-4">
+                    
+                    <h3><a href="https://github.com/cepdnaclk/e16-3yp-full-body-motion-tracking-system/blob/main/Game/AWS/template.json">AWS Infrastructure</a></h3>
+                    
+                </div>
+                    <div class="col-12 col-sm-8">
+                        <img src="./diagrams/aws_infrastructure.png" class="img-fluid max-width:50% max-height:50% mt-1 mb-1" alt="aws cloudformation template designer view">
+                        
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!--Gateway Server info-->
+    <div class="third-color">
+        <div class='container-fluid'>
+            <div class="row row-content align-items-center ">
+                <div class="col-12 col-md-3">
+                    <h3>Gateway Server</h3>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    <ul>
+
+                    
+                        <li class="lead">
+                            Isolate Authentication Server from public network
+                        </li>
+                        <li class="lead">
+                            Reduce load for Authentication Server
+                        </li>
+                        <li class="lead">
+                            Secure Authentication Server from DDOS-attacks
+                        </li>
+                        <li class="lead">    
+                            Scalability
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!--Authentication Server info-->
+    <div class="second-color">
+        <div class='container-fluid'>
+            <div class="row row-content align-items-center ">
+                <div class="col-12 col-md-3">
+                    <h3>Authentication Server</h3>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    <ul>
+
+                        <li class="lead">    
+                            Store player username, password data
+                        </li>
+                        <li class="lead">
+                            Authenticate player and generate token
+                        </li>
+                        <li class="lead">
+                            Send token to Gateway Server and Game Server
+                        </li>
+            
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    <img src="./src/img/network_arch_token.png" class="img-fluid mx-auto mt-1 mb-1" alt="network architecture with token distribution">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Game Server info-->
+    <div class="third-color">
+        <div class='container-fluid'>
+            <div class="row row-content align-items-center ">
+                <div class="col-12 col-md-3">
+                    <h3>Game Server</h3>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    <ul>
+
+                        <li class="lead">    
+                            Verify player using token pass by Authentication Server
+                        </li>
+                        <li class="lead">
+                            Buit-in clock for remove player's clock issue
+                        </li>
+                        <li class="lead">
+                            Hold world-state that has player states(position,rotation) in 100ms future
+                            to reduce lagging
+                        </li>
+                        <li class="lead">
+                            Update world state 20 per seconds to remove lagging issues
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Player info-->
+    <div class="second-color">
+        <div class='container-fluid'>
+            <div class="row row-content align-items-center ">
+                <div class="col-12 col-md-3">
+                    <h3>Player Application</h3>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-4 mb-4">
+                    <ul>
+
+                        <li class="lead">    
+                            Delete username ,password after login
+                        </li>
+                        <li class="lead">
+                            Use interpolation to make smooth game player
+                        </li>
+                        <li class="lead">
+                            Use extrapolation to predict future state
+                        </li>
+                        <li class="lead">
+                            Game run behind 100ms past 
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-3 mx-auto mt-1 mb-1">
+                    <img src="./src/img/interpolation.png" class="rounded img-fluid mx-auto my-auto" alt="interpolation diagram">
+                    <img src="./src/img/extrapolation.png" class="rounded img-fluid mx-auto mt-1" alt="extrapolation diagram">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class='footer mt-4'>
+        <div class='container'>
+            <div class='row align-items-center'>             
+                <div class='col-12 col-sm-9'>
+                    <h5>Related Links</h5>
+                    <ul class='list-unstyled'>
+                        <li><a class="external-link" href="http://www.ce.pdn.ac.lk/" target="_blank">Department of Computer Engineering</a></li>
+                        <li><a class="external-link" href="http://eng.pdn.ac.lk/" target="_blank">Faculty of Engineering</a></li>
+                        <li><a class="external-link" href="http://www.pdn.ac.lk/" target="_blank">Univerity of Peradeniya</a></li>
+                    </ul>
+                </div>
+                <div class='col-12 col-md-3'>
+                    <div class='text-center'>
+                        <a class="btn external-link btn-social-icon btn-github btn-lg" href="https://github.com/cepdnaclk/e16-3yp-full-body-motion-tracking-system"><i class="fa fa-github fa-lg">github</i></a>
+                    </div>
+                </div>
+           </div>
+           <div class='row justify-content-center'>             
+                <div class='col-auto'>
+                    <p>© Copyright 2020 Full Body Motion Tracking System</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6389eb7071.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

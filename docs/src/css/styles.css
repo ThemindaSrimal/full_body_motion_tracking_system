@@ -1,0 +1,35 @@
+html ,body{
+    background :#e13763;
+    overflow-x:hidden
+}
+.navbar
+{
+    background-color: #5d0178;
+}
+.jumbotron {
+    padding: 70px 30px 70px 30px;
+    margin: 0px auto;
+    background:#8A0079;
+    color: floralwhite;
+    
+}
+
+.second-color
+{
+    background :#00408e;
+    color:floralwhite;
+
+}
+.third-color
+{
+    background :#0081cb;
+    color:floralwhite;
+
+}
+.external-link{
+    color:floralwhite;
+}
+.footer{
+    background :#e13763;
+    color:floralwhite;
+}
