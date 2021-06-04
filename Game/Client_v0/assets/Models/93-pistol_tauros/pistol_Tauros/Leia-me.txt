@@ -1,0 +1,22 @@
+Nome do modelo: pistola tauros;
+Criador: wallace wolff dos santos;
+Email: wallacewolff98@gmail.com;
+
+Este modelo contem os seguintes arquivos:
+
+pistol_tauros.3ds;
+pistol_tauros.dae;
+pistol_tauros.mtl;
+pistol_tauros.obj;
+pistol_tauros.ply;
+pistol_tauros.stl;
+pistol_tauros.x3d;
+pistol tauros.blend;
+pistola_tauros.blend1;
+texturas modificada.png;
+textura2.png;
+texture.png;
+
+Você é livre para copiar editar distribuir e modificar qualquer arquivo bem como usar em projetos pessoais ou comerciais.
+
+OBRIGADO PELO SEU DOWLOAD.

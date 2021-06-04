@@ -1,0 +1,26 @@
+Model name: Tauros pistol;
+Creator: wallace wolff dos santos;
+Email: wallacewolff98@gmail.com;
+
+Is integrant part of this model the following archives:
+
+pistol_tauros.3ds;
+pistol_tauros.dae;
+pistol_tauros.mtl;
+pistol_tauros.obj;
+pistol_tauros.ply;
+pistol_tauros.stl;
+pistol_tauros.x3d;
+pistol tauros.blend;
+pistola_tauros.blend1;
+texturas modificada.png;
+textura2.png;
+texture.png;
+
+
+You are free to copy, modificate and distribute any contents as well as
+use in personal or comercial projects.
+
+If you are using blender please active the glp shadows mode.
+
+THANKS YOU FOR DOWLOAD. 
