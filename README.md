@@ -14,7 +14,7 @@ places, there are not enough spaces for exercising as well.
 
 ## Solution
 
-To overcome these issues, we are developing a game console based on body motion tracking of the players. This 
+To overcome those issues, we are developing a game console based on body motion tracking of the players. This 
 game console is a collection of sensors and wireless modules that can track the motion of the player. The
 collected data is used as input for a multiplayer first-person shooter game. The smartphone is used to display
 the graphics and play the sound of the game. 
